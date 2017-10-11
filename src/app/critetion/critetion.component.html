@@ -1,0 +1,8 @@
+<mat-grid-list [cols]="crits.length + 1" rowHeight="120" gutterSize="8px">
+  <mat-grid-tile *ngFor="let crit of crits" class="crit" (click)="getScore(crit)">
+    <p>{{crit.description}}</p>
+  </mat-grid-tile>
+  <mat-grid-tile class="score">
+      <h1>{{score}}</h1>
+  </mat-grid-tile>
+</mat-grid-list>
