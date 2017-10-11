@@ -12,7 +12,7 @@ export class CritetionComponent implements OnInit {
   @Input() title: string;
   @Output() onChangeScore = new EventEmitter();
   crits: Criteries[];
-  score: number;
+  score = 0;
 
   constructor(private critService: CriteriesService) { }
 
