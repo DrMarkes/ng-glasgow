@@ -1,4 +1,4 @@
-export class Response {
+export class PatientResponse {
   title: string;
   mark: string;
 }

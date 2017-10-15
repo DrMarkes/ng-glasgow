@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
-import {Response} from "../response";
-import {RESPONSES} from "../mock/response-mock";
+import {IResponseService} from './IResponseService';
+import {PatientResponse} from '../model/patientResponse';
 
 @Injectable()
-export class ResponseService {
+export abstract class ResponseService implements IResponseService{
 
-  constructor() { }
+  constructor() {};
 
-  getResponse(): Response[] {
-    return RESPONSES;
+  getResponse(): Observable<PatientResponse[]> {
+    throw new Error("Method not implemented.");
   }
 
+  setResponses(): void {}
 }

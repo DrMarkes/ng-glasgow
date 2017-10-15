@@ -1,4 +1,4 @@
-import {Criteries} from "../criteries";
+import {Criteries} from "../model/criteries";
 
 export const VCrit: Criteries[] = [
   {description: 'Отсутствие речи', score: 1},

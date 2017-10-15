@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {Criteries} from "../criteries";
+import {Criteries} from "../model/criteries";
 import {ECrit} from "../mock/ECrit-mock";
 import {VCrit} from "../mock/VCrit-mock";
 import {MCrit} from "../mock/MCrit";

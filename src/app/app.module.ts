@@ -2,25 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ResponseCardComponent } from './response-card/response-card.component';
-import {MaterialDesignModule} from './material-design/material-design.module';
-import {ResponseService} from "./services/response.service";
-import { CritetionComponent } from './critetion/critetion.component';
-import {CriteriesService} from "./services/criteries.service";
+import {ResponseService} from './services/response.service';
+import {MockResponseService} from './services/mock-response.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ResponseCardComponent,
-    CritetionComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    MaterialDesignModule
+    BrowserModule
   ],
   providers: [
-    ResponseService,
-    CriteriesService
+    {provide: ResponseService, useClass: MockResponseService}
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,9 @@
 <div class="container">
-  <app-response-card>
-  </app-response-card>
+  <h2 class="page-header">Hello World</h2>
+  <ul class="list-group">
+    <li *ngFor="let response of patientResponses" class="list-group-item">
+      {{response.title}}
+    </li>
+  </ul>
 </div>
 

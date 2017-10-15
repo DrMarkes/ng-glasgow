@@ -1,4 +1,4 @@
-import {Criteries} from "../criteries";
+import {Criteries} from "../model/criteries";
 
 export const ECrit: Criteries[] = [
   {description: 'Отсутствует', score: 1},
