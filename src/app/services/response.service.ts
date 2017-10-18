@@ -7,11 +7,5 @@ import {PatientResponse} from '../model/patientResponse';
 @Injectable()
 export abstract class ResponseService implements IResponseService{
 
-  constructor() {};
-
-  getResponse(): Observable<PatientResponse[]> {
-    throw new Error("Method not implemented.");
-  }
-
-  setResponses(): void {}
+  abstract getResponse(): Observable<PatientResponse[]>;
 }

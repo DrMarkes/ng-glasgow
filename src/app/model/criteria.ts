@@ -1,4 +1,4 @@
-export class Criteries {
+export class Criteria {
   description: string;
   score: number;
 }
