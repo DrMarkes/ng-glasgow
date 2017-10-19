@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {PatientResponse} from '../model/patient-response';
 
 @Injectable()
-export abstract class ResponseService {
+export abstract class DataService {
 
   abstract getResponse(): Observable<PatientResponse[]>;
 

@@ -4,8 +4,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {Route, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import {ResponseService} from './services/response.service';
-import {MockResponseService} from './services/mock-response.service';
+import {DataService} from './services/data.service';
+import {MockDataService} from './services/mock-data.service';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { ResponseCardComponent } from './components/response-card/response-card.component';
 import { ResultComponent } from './components/result/result.component';
@@ -32,7 +32,7 @@ const ROUTES: Route[] = [
     CustomMaterialModule
   ],
   providers: [
-    {provide: ResponseService, useClass: MockResponseService}
+    {provide: DataService, useClass: MockDataService}
   ],
   bootstrap: [AppComponent]
 })

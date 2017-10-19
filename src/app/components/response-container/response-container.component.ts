@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {PatientResponse} from '../../model/patient-response';
-import {ResponseService} from '../../services/response.service';
+import {DataService} from '../../services/data.service';
 import {Criteria} from '../../model/criteria';
 
 
@@ -15,7 +15,7 @@ export class ResponseContainerComponent implements OnInit {
   patientResponses: PatientResponse[];
   result = new Map<string, number>();
 
-  constructor(private responseService: ResponseService,
+  constructor(private responseService: DataService,
               private router: Router) {
   }
 

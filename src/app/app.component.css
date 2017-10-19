@@ -1,7 +1,7 @@
-.body {
-  background-color: whitesmoke;
-}
-
 .container {
   flex-basis: 80%;
+}
+
+mat-toolbar {
+  margin-bottom: 8px;
 }

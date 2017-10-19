@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
-import {ResponseService} from './response.service';
+import {DataService} from './data.service';
 import {PatientResponse} from '../model/patient-response';
 import {RESPONSES} from '../mock/response-mock';
 
 @Injectable()
-export class MockResponseService extends ResponseService{
+export class MockDataService extends DataService{
 
   private patientResponses: BehaviorSubject<PatientResponse[]>;
   private result: BehaviorSubject<Map<string, number>>;

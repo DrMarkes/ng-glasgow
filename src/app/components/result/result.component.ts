@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
 
-import {ResponseService} from '../../services/response.service';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-result',
@@ -12,7 +13,8 @@ export class ResultComponent implements OnInit {
   total = 0;
   description: string;
 
-  constructor(private responseService: ResponseService) {
+  constructor(private responseService: DataService,
+              private location: Location) {
   }
 
   ngOnInit() {
@@ -75,5 +77,9 @@ export class ResultComponent implements OnInit {
         this.description = 'сознание ясное';
         break;
     }
+  }
+
+  onClickBack() {
+    this.location.back();
   }
 }
