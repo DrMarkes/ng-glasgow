@@ -15,7 +15,7 @@ import {ResponseContainerComponent} from './components/response-container/respon
 const ROUTES: Route[] = [
   {path: '', component: ResponseContainerComponent},
   {path: 'result', component: ResultComponent},
-  {path: '**', component: ResponseContainerComponent}
+  {path: '**', redirectTo: ''}
 ]
 
 @NgModule({

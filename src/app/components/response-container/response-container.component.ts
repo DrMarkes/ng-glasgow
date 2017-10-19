@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {PatientResponse} from '../../model/patient-response';
 import {ResponseService} from '../../services/response.service';
 import {Criteria} from '../../model/criteria';
-import {ResultGlasgow} from '../../model/result-glasgow';
 
 
 @Component({
@@ -13,10 +13,10 @@ import {ResultGlasgow} from '../../model/result-glasgow';
 })
 export class ResponseContainerComponent implements OnInit {
   patientResponses: PatientResponse[];
-  result: ResultGlasgow;
+  result = new Map<string, number>();
 
-  constructor(private responseService: ResponseService) {
-    this.result = new ResultGlasgow();
+  constructor(private responseService: ResponseService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -28,20 +28,12 @@ export class ResponseContainerComponent implements OnInit {
 
   setCriteria(criteria: Criteria) {
     let key = criteria.mark;
-    let score = criteria.score;
-    switch (key) {
-      case 'E':
-        this.result.E = score;
-        break;
-      case 'V':
-        this.result.V = score;
-        break;
-      case 'M':
-        this.result.M = score;
-        break;
-    }
+    this.result[key] = criteria.score;
+  }
 
-    console.log(this.result);
+  onClickResult() {
+    this.responseService.setResult(this.result);
+    this.router.navigate(['result']);
   }
 
 }

@@ -7,4 +7,8 @@ import {PatientResponse} from '../model/patient-response';
 export abstract class ResponseService {
 
   abstract getResponse(): Observable<PatientResponse[]>;
+
+  abstract setResult(result: Map<string, number>): void;
+
+  abstract getResult(): Observable<Map<string, number>>;
 }
