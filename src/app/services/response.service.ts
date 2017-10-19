@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
-import {IResponseService} from './IResponseService';
-import {PatientResponse} from '../model/patientResponse';
+import {PatientResponse} from '../model/patient-response';
 
 @Injectable()
-export abstract class ResponseService implements IResponseService{
+export abstract class ResponseService {
 
   abstract getResponse(): Observable<PatientResponse[]>;
 }

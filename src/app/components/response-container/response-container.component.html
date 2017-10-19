@@ -1,0 +1,7 @@
+<div *ngFor="let response of patientResponses">
+  <app-response-card (onChangedCriteria)="setCriteria($event)" [response]="response"></app-response-card>
+</div>
+<div class="button-result-container" fxLayout="row" fxLayoutAlign="center">
+  <button mat-raised-button color="accent">Расчет</button>
+</div>
+

@@ -1,8 +1,7 @@
 .body {
-  display: flex;
+  background-color: whitesmoke;
 }
 
 .container {
   flex-basis: 80%;
-  margin: auto;
 }

@@ -2,8 +2,14 @@
   <mat-card-title><h2>{{response.title}}</h2></mat-card-title>
   <mat-card-content>
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
-      <div class="criteria-box" fxFlex="<grow>" *ngFor="let criteria of response.criteries">
-          <p>{{criteria.description}}</p>
+      <div class="criteria-box" fxFlex="<grow>" *ngFor="let criteria of response.criteries"
+           (click)="setCriteria(criteria)" [class.selected]="criteria === activeCriteria">
+        <p>{{criteria.description}}</p>
+      </div>
+    </div>
+    <div fxLayout="row" *ngIf="activeCriteria" fxLayoutGap="16px">
+      <div class="result" fxFlex="<grow>">
+        <h2>{{activeCriteria.description}}: {{activeCriteria.score}}</h2>
       </div>
     </div>
   </mat-card-content>

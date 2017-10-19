@@ -1,19 +1,29 @@
-mat-card {
-  background-color: floralwhite;
-}
-
-mat-card-title h2 {
-  color: purple;
-}
-
 .criteria-box {
   background-color: cornflowerblue;
   min-height: 64px;
   padding: 8px;
-  color: white;
   flex-wrap: wrap;
+  color: white;
 }
 
 .criteria-box:hover {
   cursor: pointer;
+}
+
+.selected {
+  background-color: purple;
+}
+
+mat-card {
+  margin-top: 8px;
+}
+
+.result {
+  background-color: green;
+  min-height: 64px;
+  padding: 8px;
+  flex-wrap: wrap;
+  color: white;
+  margin: 8px 0 8px 0;
+  text-align: center;
 }

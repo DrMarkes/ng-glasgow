@@ -1,7 +1,6 @@
-<div class="body">
-  <div fxLayout="column" class="container" fxLayoutGap="16px">
-    <div *ngFor="let response of patientResponses">
-      <app-response-card [response]="response"></app-response-card>
-    </div>
+<mat-toolbar color="primary">Шкала ком Глазго</mat-toolbar>
+<div class="body" fxLayoutAlign="center">
+  <div fxLayout="column" class="container">
+    <router-outlet></router-outlet>
   </div>
 </div>

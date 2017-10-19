@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 import {ResponseService} from './response.service';
-import {PatientResponse} from '../model/patientResponse';
+import {PatientResponse} from '../model/patient-response';
 import {RESPONSES} from '../mock/response-mock';
 
 @Injectable()

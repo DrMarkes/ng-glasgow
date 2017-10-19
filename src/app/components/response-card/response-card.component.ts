@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
-import {PatientResponse} from '../../model/patientResponse';
+import {PatientResponse} from '../../model/patient-response';
+import {Criteria} from '../../model/criteria';
 
 @Component({
   selector: 'app-response-card',
@@ -9,11 +10,18 @@ import {PatientResponse} from '../../model/patientResponse';
 })
 export class ResponseCardComponent implements OnInit {
   @Input() response: PatientResponse;
+  @Output() onChangedCriteria = new EventEmitter<Criteria>();
+  activeCriteria: Criteria;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
+  setCriteria(criteria: Criteria) {
+    this.activeCriteria = criteria;
+    this.onChangedCriteria.emit(this.activeCriteria);
+  }
 }
