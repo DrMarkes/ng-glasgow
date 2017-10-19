@@ -28,7 +28,7 @@ export class ResponseContainerComponent implements OnInit {
 
   setCriteria(criteria: Criteria) {
     let key = criteria.mark;
-    this.result[key] = criteria.score;
+    this.result.set(key, criteria.score);
   }
 
   onClickResult() {

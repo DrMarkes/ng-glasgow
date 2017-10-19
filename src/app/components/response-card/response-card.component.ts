@@ -23,5 +23,6 @@ export class ResponseCardComponent implements OnInit {
   setCriteria(criteria: Criteria) {
     this.activeCriteria = criteria;
     this.onChangedCriteria.emit(this.activeCriteria);
+
   }
 }
