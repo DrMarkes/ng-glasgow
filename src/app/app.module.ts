@@ -13,7 +13,6 @@ import {ResponseContainerComponent} from './components/response-container/respon
 import {ResultResolverService} from './services/result-resolver.service';
 import {CanDeactivateGuard} from './guards/can-deactivate.guard';
 
-// TODO navigate to '', guard on result
 const ROUTES: Route[] = [
   {path: '', component: ResponseContainerComponent},
   {
@@ -25,7 +24,7 @@ const ROUTES: Route[] = [
     }
   },
   {path: '**', redirectTo: ''}
-]
+];
 
 @NgModule({
   declarations: [
@@ -42,7 +41,8 @@ const ROUTES: Route[] = [
   ],
   providers: [
     {provide: DataService, useClass: MockDataService},
-    ResultResolverService
+    ResultResolverService,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })

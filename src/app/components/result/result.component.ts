@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Location} from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-result',
@@ -15,7 +15,7 @@ export class ResultComponent implements OnInit {
   total = 0;
   description: string;
 
-  constructor(private location: Location,
+  constructor(private router: Router,
               private route: ActivatedRoute) {
   }
 
@@ -79,6 +79,6 @@ export class ResultComponent implements OnInit {
   }
 
   onClickBack() {
-    this.location.back();
+    this.router.navigate(['/']);
   }
 }
