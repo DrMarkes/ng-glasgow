@@ -33,7 +33,7 @@ export class ResponseContainerComponent implements OnInit {
 
   onClickResult() {
     this.responseService.setResult(this.result);
-    this.router.navigate(['result']);
+    this.router.navigate(['/result']);
   }
 
 }

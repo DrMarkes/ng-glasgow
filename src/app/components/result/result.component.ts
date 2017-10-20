@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-
-import {DataService} from '../../services/data.service';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/take';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -9,24 +10,22 @@ import {DataService} from '../../services/data.service';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-  result = new Map<string, number>();
+
+  result: Map<string, number>;
   total = 0;
   description: string;
 
-  constructor(private responseService: DataService,
-              private location: Location) {
+  constructor(private location: Location,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.getResult();
+    this.route.data
+      .subscribe((data: { result: Map<string, number> }) => {
+        this.result = data.result;
+      });
     this.countTotal();
     this.setDescription();
-  }
-
-  private getResult() {
-    this.responseService.getResult().subscribe(result => {
-      this.result = result;
-    });
   }
 
   countTotal() {
